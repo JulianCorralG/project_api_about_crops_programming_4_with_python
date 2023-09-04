@@ -10,8 +10,6 @@ Welcome to the Agriculture Data Analysis project! This Python-based tool simplif
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Modules](#modules)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Getting Started
 
@@ -25,9 +23,9 @@ Follow these instructions to get the project up and running on your local machin
 ### Installation
 
 1. Clone this repository to your local machine using:
-https://github.com/JulianCorralG/project_api_about_crops_programming_4_with_python
+https://github.com/JulianCorralG/project_api_about_crops_programming_4_with_python.git
 
-2. Navigate to the project directory:
+3. Navigate to the project directory:
 cd project_api_about_crops_programming_4_with_python
 
 
@@ -43,7 +41,7 @@ python main.py
 
 ## Modules
 
-- `main.py`: The main entry point of the application.
+- `main_section/main.py`: The main entry point of the application.
 - `ui_section/ui.py`: Handles user input and presentation.
 - `api_section/api.py`: Manages data retrieval from the Socrata API and data manipulation.
 
