@@ -1,0 +1,24 @@
+import sys
+import os
+
+
+
+# Obtén la ruta de la carpeta actual
+current_folder = os.path.dirname(os.path.abspath(__file__))
+
+# Agrega la carpeta principal al PYTHONPATH
+sys.path.append(os.path.join(current_folder, '..'))
+
+# Ahora puedes importar módulos desde el nivel superior
+from ui_section.ui import get_parameters_to_query_in_database, show_dataframe_from, show_medians_of_edaphic_variables_from
+from api_section.api import get_dataset_from, get_dataframe_from, rename_columns_of_edaphic_variables_from, clean_columns_of_edaphic_variables_from, calculate_medians_of_edaphic_variables_from
+
+
+dictionary_with_keywords_arguments_to_query_in_database_generated_by_ui_section = get_parameters_to_query_in_database()
+dataset_generated_by_api_section = get_dataset_from(**dictionary_with_keywords_arguments_to_query_in_database_generated_by_ui_section)
+dataframe_dirty_generated_by_api_section = get_dataframe_from(dataset_generated_by_api_section)
+dataframe_renamed_generated_by_api_section = rename_columns_of_edaphic_variables_from(dataframe_dirty_generated_by_api_section)
+show_dataframe_from(dataframe_renamed_generated_by_api_section)
+dataframe_cleaned_generated_by_api_section = clean_columns_of_edaphic_variables_from(dataframe_renamed_generated_by_api_section)
+dictionary_with_edaphic_variables_generated_by_api_section = calculate_medians_of_edaphic_variables_from(dataframe_cleaned_generated_by_api_section)
+show_medians_of_edaphic_variables_from(dictionary_with_edaphic_variables_generated_by_api_section['median_pH'], dictionary_with_edaphic_variables_generated_by_api_section['median_phosphorus'], dictionary_with_edaphic_variables_generated_by_api_section['median_potassium'])
