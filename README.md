@@ -32,7 +32,7 @@ cd project_api_about_crops_programming_4_with_python
 ### Usage
 
 1. Run the main script to start the data analysis tool:
-python main.py
+python main_section/main.py
 
 
 2. Follow the prompts to enter your query parameters (department, municipality, crop type, and limit).
